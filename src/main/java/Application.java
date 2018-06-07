@@ -34,7 +34,7 @@ public class Application {
         Client client = ClientFactory.createClient();
         client.createConnection("localhost");
 
-        testVolt(materializer, client);
+        (new Application()).start(materializer, client);
 
         system.terminate();
     }
@@ -47,7 +47,7 @@ public class Application {
                     {235, 135, 145, 190, 110, 110}
             };
 
-    private static void testVolt(ActorMaterializer materializer, Client client) {
+    private void start(ActorMaterializer materializer, Client client) {
 
         List<Source<Integer, ?>> sourceList = Arrays.asList(
                 Source.from(Arrays.asList(INPUT_MATRIX[0])),
