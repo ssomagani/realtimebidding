@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'application'
+}
+
+group 'voltdb.examples'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.9
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'com.typesafe.akka:akka-actor_2.12:2.5.3'
+    compile group: 'com.typesafe.akka', name: 'akka-stream_2.12', version:'2.5.12'
+    compile group: 'org.voltdb', name: 'voltdbclient', version: '8.1'
+    testCompile group: 'com.typesafe.akka', name: 'akka-stream-testkit_2.12', version:'2.5.12'
+}
